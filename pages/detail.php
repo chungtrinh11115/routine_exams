@@ -1,3 +1,27 @@
+<?php
+    $dsn = "mysql:host=localhost;dbname=restaurantdb;charset=utf8";
+    $user = "restaurantdb_admin";
+    $password = "admin123";
+    
+     isset($_GET["id"]) ? $id = $_GET["id"] : $id = "";
+    
+    /*try {
+    	$pdo = new PDO($dsn, $user, $password);
+    	$sql = "select * from restaurants where area=?";
+    	$pstmt = $pdo->prepare($sql);
+    	$pstmt->bindValue(1, $area);
+    	$pstmt->execute();
+    	$records = [];
+    	$records = $pstmt->fetchAll(PDO::FETCH_ASSOC);
+    	unset($pstmt);
+    	unset($pdo);
+    } catch (PDOException $e) { 
+    	echo $e->getMessage();
+    } */
+    
+    var_dump($id);
+?>
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
