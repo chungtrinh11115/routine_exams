@@ -5,11 +5,11 @@
     
      isset($_GET["id"]) ? $id = $_GET["id"] : $id = "";
     
-    /*try {
+    try {
     	$pdo = new PDO($dsn, $user, $password);
-    	$sql = "select * from restaurants where area=?";
+    	$sql = "select * from restaurants where id=?";
     	$pstmt = $pdo->prepare($sql);
-    	$pstmt->bindValue(1, $area);
+    	$pstmt->bindValue(1, $id);
     	$pstmt->execute();
     	$records = [];
     	$records = $pstmt->fetchAll(PDO::FETCH_ASSOC);
@@ -17,9 +17,10 @@
     	unset($pdo);
     } catch (PDOException $e) { 
     	echo $e->getMessage();
-    } */
+    } 
+
     
-    var_dump($id);
+    var_dump($records);
 ?>
 
 <!DOCTYPE html>
@@ -41,16 +42,19 @@
 			<section>
 				<table class="list">
 					<tr>
-						<td class="photo"><img name="image" src="../pages/img/restaurant_1.jpg" /></td>
-						<td class="info">
-							<dl>
-								<dt name="name">レストラン さくら</dt>
-								<dd name="description">
-									四季折々の自然を楽しむ伊豆市に、ひっそりと佇む隠れ家レストラン。
-									旅行でいらっしゃった方も、お近くの方も、お気軽にお立ち寄りください。
-								</dd>
-							</dl>
-						</td>
+					    <?php if(count($records) > 0): ?>
+					        <?php foreach ($records as $record): ?>
+        						<td class="photo"><img name="image" src="../pages/img/<?= $record[image] ?> "/></td>
+        						<td class="info">
+        							<dl>
+        								<dt name="name"><?= $record[name] ?></dt>
+        								<dd name="description">
+        									<?= $record[description] ?>
+        								</dd>
+        							</dl>
+        						</td>
+    						<?php endforeach;?>
+						<?php endif;?>
 					</tr>
 				</table>
 			</section>
