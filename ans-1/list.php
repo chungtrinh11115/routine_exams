@@ -55,16 +55,16 @@ $records = $pstmt->fetchAll(PDO::FETCH_ASSOC);
 				<p><?= count($records) ?>件のレストランが見つかりました。</p>
 				<table class="list">
 					<?php foreach ($records as $record): ?>
-					<tr>
-						<td class="photo"><img name="image" alt="「<?= $record["name"] ?>」の写真" src="../pages/img/<?= $record["image"] ?>" /></td>
-						<td class="info">
-							<dl>
-								<dt name="name"><?= $record["name"] ?></dt>
-								<dd name="description"><?= $record["description"] ?></dd>
-							</dl>
-						</td>
-						<td class="link"><a href="detail.php?id=<?= $record["id"] ?>">詳細</a></td>
-					</tr>
+    					<tr>
+    						<td class="photo"><img name="image" alt="「<?= $record["name"] ?>」の写真" src="../pages/img/<?= $record["image"] ?>" /></td>
+    						<td class="info">
+    							<dl>
+    								<dt name="name"><?= $record["name"] ?></dt>
+    								<dd name="description"><?= $record["description"] ?></dd>
+    							</dl>
+    						</td>
+    						<td class="link"><a href="detail.php?id=<?= $record["id"] ?>">詳細</a></td>
+    					</tr>
 					<?php endforeach; ?>
 				</table>
 			</section>
