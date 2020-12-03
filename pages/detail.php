@@ -31,7 +31,6 @@
     var_dump($records);
     var_dump($recordsRv);
 ?>
-
 <!DOCTYPE html>
 <html lang="ja">
 <head>

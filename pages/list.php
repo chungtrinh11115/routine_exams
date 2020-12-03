@@ -99,6 +99,5 @@
 	<footer>
 		<div class="copyright">&copy; 2020 the applied course of web system development</div>
 	</footer>
-	
 </body>
 </html>
