@@ -3,6 +3,10 @@
     $user = "restaurantdb_admin";
     $password = "admin123";
     
+    
+    
+    
+    
      isset($_GET["id"]) ? $id = $_GET["id"] : $id = "";
     
     try {
@@ -25,6 +29,11 @@
     } catch (PDOException $e) { 
     	echo $e->getMessage();
     } 
+    
+    
+    
+    
+    
 
     //*****
     var_dump($id);
